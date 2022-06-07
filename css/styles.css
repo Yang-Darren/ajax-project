@@ -1,0 +1,44 @@
+.container {
+  background-color: rgb(241, 241, 241);
+}
+
+header {
+  background-color: rgb(245, 35, 35);
+  height: 150px;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home,
+.my-collection {
+  color: white;
+  font-weight: bolder;
+  padding: 6rem 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 75px;
+  margin-left: 100px;
+  width: 75%;
+}
+
+label {
+  display: block;
+  margin-left: 165px;
+  line-height: 150%;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+input {
+  width: 60%;
+  margin-left: 165px;
+  height: 2rem;
+  border-radius: 10px;
+  border: none;
+}
