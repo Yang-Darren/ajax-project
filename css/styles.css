@@ -27,6 +27,7 @@ header {
   color: white;
   font-weight: bolder;
   padding: 6rem 1.5rem;
+  cursor: pointer;
 }
 
 h1 {
