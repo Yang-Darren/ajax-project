@@ -14,57 +14,65 @@
     rel="stylesheet">
 </head>
 <body class="container">
-  <header class="nav-bar">
-    <p class="home">Home</p>
-    <p class="my-collection">My Collection</p>
-  </header>
-  <main>
-    <div>
-      <h1>PokeCollection Tracker Home</h1>
-    </div>
-    <div>
-      <label for="search">Search</label>
-    </div>
-    <div>
-      <input required name="search" type="text" id="search">
-    </div>
-    <div id="card-deck">
-      <div class="card-wrapper">
-        <div class="pokemon-card">
-          <p class="info">Blastoise</p>
-          <p class="info">Unbroken Bonds</p>
-          <img src="https://product-images.tcgplayer.com/fit-in/437x437/189100.jpg" alt="Blastoise">
-          <div class="market">
-            <p>Market Value: $84.28</p>
-            <p class="heart">&#10084;</p>
+
+  <div>
+    <header class="nav-bar">
+      <p class="home">Home</p>
+      <p class="my-collection">My Collection</p>
+    </header>
+
+    <main>
+      <div>
+        <h1>PokeCollection Tracker Home</h1>
+      </div>
+
+      <div id="search-home">
+        <div class="searching">
+          <div>
+            <label for="search">Search</label>
+          </div>
+          <input required name="search" type="text" id="search">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="pokemon-card">
+            <p class="info">Blastoise</p>
+            <p class="info">Unbroken Bonds</p>
+            <img src="https://product-images.tcgplayer.com/fit-in/437x437/189100.jpg" alt="Blastoise">
+            <div class="market">
+              <p>Market Value: $84.28</p>
+              <p class="heart">&#10084;</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pokemon-card">
+            <p class="info">Charizard</p>
+            <p class="info">Burning Shadows</p>
+            <img src="https://product-images.tcgplayer.com/fit-in/437x437/138497.jpg" alt="Charizard">
+            <div class="market">
+              <p>Market Value: $410.90</p>
+              <p class="heart">&#10084;</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="pokemon-card">
+            <p class="info">Venusaur</p>
+            <p class="info">Team Up</p>
+            <img src="https://product-images.tcgplayer.com/fit-in/437x437/183772.jpg" alt="Charizard">
+            <div class="market">
+              <p>Market Value: $27.68</p>
+              <p class="heart">&#10084;</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="card-wrapper">
-        <div class="pokemon-card">
-          <p class="info">Charizard</p>
-          <p class="info">Burning Shadows</p>
-          <img src="https://product-images.tcgplayer.com/fit-in/437x437/138497.jpg" alt="Charizard">
-          <div class="market">
-            <p>Market Value: $410.90</p>
-            <p class="heart">&#10084;</p>
-          </div>
-        </div>
-      </div>
-      <div class="card-wrapper">
-        <div class="pokemon-card">
-          <p class="info">Venusaur</p>
-          <p class="info">Team Up</p>
-          <img src="https://product-images.tcgplayer.com/fit-in/437x437/183772.jpg" alt="Charizard">
-          <div class="market">
-            <p>Market Value: $27.68</p>
-            <p class="heart">&#10084;</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
+
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

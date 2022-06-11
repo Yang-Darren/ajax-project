@@ -13,8 +13,7 @@
   flex-wrap: wrap;
 }
 
-.column-full,
-.column-half {
+.col {
   width: 100%;
 }
 
@@ -23,7 +22,7 @@
     max-width: 900px;
   }
 
-  .column-half {
-    width: 50%;
+  .col {
+    width: calc(100%/3);
   }
 }

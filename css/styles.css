@@ -1,3 +1,13 @@
+* {
+  font-family:
+    Comfortaa,
+    cursive;
+  font-family:
+    "Proza Libre",
+    sans-serif;
+  box-sizing: border-box;
+}
+
 .container {
   background-color: rgb(241, 241, 241);
 }
@@ -20,25 +30,58 @@ header {
 }
 
 h1 {
-  text-align: center;
+  font-weight: bold;
   font-size: 50px;
-  margin-top: 75px;
-  margin-left: 100px;
-  width: 75%;
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.card-wrapper {
+  display: flex;
 }
 
 label {
-  display: block;
-  margin-left: 165px;
-  line-height: 150%;
   font-size: 30px;
   font-weight: bolder;
 }
 
 input {
-  width: 60%;
-  margin-left: 165px;
+  width: 500px;
   height: 2rem;
   border-radius: 10px;
   border: none;
+  margin: auto;
+}
+
+.info {
+  text-align: center;
+}
+
+.market {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 10px;
+}
+
+.heart {
+  color: red;
+}
+
+img {
+  border-radius: 30px;
+  max-width: 100%;
+  width: 100%;
+}
+
+#search-home {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 55px;
+}
+
+.col {
+  padding-left: 5px;
+  padding-right: 5px;
 }
