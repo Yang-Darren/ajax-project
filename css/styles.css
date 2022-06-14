@@ -1,0 +1,87 @@
+* {
+  font-family:
+    Comfortaa,
+    cursive;
+  font-family:
+    "Proza Libre",
+    sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: rgb(241, 241, 241);
+}
+
+header {
+  background-color: rgb(245, 35, 35);
+  height: 150px;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home,
+.my-collection {
+  color: white;
+  font-weight: bolder;
+  padding: 6rem 1.5rem;
+  cursor: pointer;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 50px;
+  margin-top: 3rem;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.card-wrapper {
+  display: flex;
+}
+
+label {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+input {
+  height: 2rem;
+  border-radius: 10px;
+  border: none;
+  margin: auto;
+}
+
+.info {
+  text-align: center;
+}
+
+.market {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 10px;
+}
+
+.heart {
+  color: red;
+}
+
+img {
+  border-radius: 30px;
+  max-width: 100%;
+  width: 100%;
+}
+
+#search-home {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 55px;
+}
+
+.col {
+  padding-left: 5px;
+  padding-right: 5px;
+}
