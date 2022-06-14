@@ -22,7 +22,7 @@
     width: 50%;
   }
 
-  input {
+  #search {
     width: 300px;
   }
 }
@@ -36,7 +36,7 @@
     width: calc(100%/3);
   }
 
-  input {
+  #search {
     width: 500px;
   }
 }
