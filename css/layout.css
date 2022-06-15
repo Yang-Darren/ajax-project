@@ -25,6 +25,10 @@
   #search {
     width: 300px;
   }
+
+  #search-results {
+    width: 300px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -38,5 +42,9 @@
 
   #search {
     width: 500px;
+  }
+
+  #search-results {
+    width: 600px;
   }
 }
