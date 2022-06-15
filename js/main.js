@@ -1,11 +1,14 @@
 var $search = document.querySelector('#search');
 var $homePage = document.querySelector('#home-page');
+var $searchResults = document.querySelector('#search-result');
+
 $search.addEventListener('keydown', search);
 
 function search() {
   if (event.key === 'Enter') {
     $search.value = '';
     $homePage.className = 'hidden';
+    $searchResults.className = '';
   }
 }
 
