@@ -13,24 +13,36 @@ function search() {
 }
 
 var pokemon = new XMLHttpRequest();
-var $pokemonList = document.querySelector('#pokemon-list');
+var $pokemonList = document.querySelector('ul');
 
 pokemon.open('GET', 'https://api.pokemontcg.io/v2/cards');
 pokemon.responseType = 'json';
 pokemon.addEventListener('load', function () {
+  var $pokemonSearch = document.createElement('li');
+  $pokemonList.appendChild($pokemonSearch);
+  var $row = document.createElement('div');
+  $row.className = 'row';
+  $pokemonSearch.appendChild($row);
   var firstNumber = Math.floor(Math.random() * 250);
-  var $firstPokemon = document.createElement('li');
-  var $firstSet = document.createElement('p');
-  var $firstImg = document.createElement('img');
-  var $firstPrice = document.createElement('p');
-  $firstPokemon.textContent = pokemon.response.data[firstNumber].name;
-  $firstSet.textContent = pokemon.response.data[firstNumber].set.name;
-  $firstImg.setAttribute('src', pokemon.response.data[firstNumber].images.small);
-  $firstPrice.textContent = pokemon.response.data[firstNumber].tcgplayer.prices.market;
-  $pokemonList.appendChild($firstPokemon);
-  $pokemonList.appendChild($firstSet);
-  $pokemonList.appendChild($firstImg);
-  $pokemonList.appendChild($firstPrice);
+  var $imgColumn = document.createElement('div');
+  $imgColumn.className = 'col-half';
+  var $pokemonImg = document.createElement('img');
+  $pokemonImg.setAttribute('src', pokemon.response.data[firstNumber].images.small);
+  $row.appendChild($pokemonImg);
+  var $cardInfo = document.createElement('div');
+  $cardInfo.className = 'col-half';
+  var $pokemonName = document.createElement('p');
+  $pokemonName.textContent = pokemon.response.data[firstNumber].name;
+  var $pokemonSet = document.createElement('p');
+  $pokemonSet.textContent = pokemon.response.data[firstNumber].set.name;
+  var $price = document.createElement('p');
+  $price.textContent = pokemon.response.data[firstNumber].tcgplayer.prices.market;
+
+  $cardInfo.appendChild($pokemonName);
+  $cardInfo.appendChild($pokemonSet);
+  $cardInfo.appendChild($price);
+  $row.appendChild($cardInfo);
+
 });
 
 pokemon.send();

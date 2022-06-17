@@ -137,3 +137,11 @@ img {
   margin-left: 3rem;
   margin-top: 3rem;
 }
+
+ul {
+  list-style-type: none;
+}
+
+.col-half {
+  width: 50%;
+}
