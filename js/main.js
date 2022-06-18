@@ -25,12 +25,13 @@ pokemon.addEventListener('load', function () {
   $pokemonSearch.appendChild($row);
   var firstNumber = Math.floor(Math.random() * 250);
   var $imgColumn = document.createElement('div');
-  $imgColumn.className = 'col-half';
+  $imgColumn.className = 'col-fourth';
+  $row.appendChild($imgColumn);
   var $pokemonImg = document.createElement('img');
   $pokemonImg.setAttribute('src', pokemon.response.data[firstNumber].images.small);
-  $row.appendChild($pokemonImg);
+  $imgColumn.appendChild($pokemonImg);
   var $cardInfo = document.createElement('div');
-  $cardInfo.className = 'col-half';
+  $cardInfo.className = 'col-fourth card-info';
   var $pokemonName = document.createElement('p');
   $pokemonName.textContent = pokemon.response.data[firstNumber].name;
   var $pokemonSet = document.createElement('p');

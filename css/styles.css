@@ -84,6 +84,8 @@ img {
 .col {
   padding-left: 5px;
   padding-right: 5px;
+  background-color: white;
+  border-radius: 75px;
 }
 
 .dropbtn {
@@ -115,7 +117,7 @@ img {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: rgb(241, 241, 241);
 }
 
 .dropdown:hover .dropdown-content {
@@ -133,15 +135,24 @@ img {
   transform: rotate(45deg);
 }
 
-#search-result {
+#search-result-section {
   margin-left: 3rem;
   margin-top: 3rem;
+}
+
+#search-results {
+  margin-bottom: 4rem;
 }
 
 ul {
   list-style-type: none;
 }
 
-.col-half {
-  width: 50%;
+.col-fourth {
+  flex-basis: 25%;
+  background-color: white;
+}
+
+.card-info {
+  padding-left: 8px;
 }
