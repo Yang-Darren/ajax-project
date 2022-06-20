@@ -6,14 +6,6 @@ var $homeNav = document.querySelector('.home');
 $search.addEventListener('keydown', search);
 $homeNav.addEventListener('click', navBar);
 
-function search() {
-  if (event.key === 'Enter') {
-    $search.value = '';
-    $homePage.className = 'hidden';
-    $searchResults.className = '';
-  }
-}
-
 function navBar() {
   if (event.target.matches('.home')) {
     $homePage.className = '';
@@ -27,32 +19,56 @@ var $pokemonList = document.querySelector('ul');
 pokemon.open('GET', 'https://api.pokemontcg.io/v2/cards');
 pokemon.responseType = 'json';
 pokemon.addEventListener('load', function () {
-  var $pokemonSearch = document.createElement('li');
-  $pokemonList.appendChild($pokemonSearch);
-  var $row = document.createElement('div');
-  $row.className = 'row';
-  $pokemonSearch.appendChild($row);
-  var firstNumber = Math.floor(Math.random() * 250);
-  var $imgColumn = document.createElement('div');
-  $imgColumn.className = 'col-fourth';
-  $row.appendChild($imgColumn);
-  var $pokemonImg = document.createElement('img');
-  $pokemonImg.setAttribute('src', pokemon.response.data[firstNumber].images.small);
-  $imgColumn.appendChild($pokemonImg);
-  var $cardInfo = document.createElement('div');
-  $cardInfo.className = 'col-fourth card-info';
-  var $pokemonName = document.createElement('p');
-  $pokemonName.textContent = pokemon.response.data[firstNumber].name;
-  var $pokemonSet = document.createElement('p');
-  $pokemonSet.textContent = pokemon.response.data[firstNumber].set.name;
-  var $price = document.createElement('p');
-  $price.textContent = pokemon.response.data[firstNumber].tcgplayer.prices.market;
+  for (var i = 0; i < 250; i++) {
+    if ($search.value === pokemon.response.data[i].name) {
+      var $pokemonSearch = document.createElement('li');
+      $pokemonList.appendChild($pokemonSearch);
+      var $row = document.createElement('div');
+      $row.className = 'row';
+      $pokemonSearch.appendChild($row);
+      var $imgColumn = document.createElement('div');
+      $imgColumn.className = 'col-fourth';
+      $row.appendChild($imgColumn);
+      var $pokemonImg = document.createElement('img');
+      $pokemonImg.setAttribute('src', pokemon.response.data[i].images.small);
+      $imgColumn.appendChild($pokemonImg);
+      var $cardInfo = document.createElement('div');
+      $cardInfo.className = 'col-fourth card-info';
+      var $pokemonName = document.createElement('p');
+      $pokemonName.className = 'pokemon-name';
+      $pokemonName.textContent = pokemon.response.data[i].name;
+      var $pokemonSet = document.createElement('p');
+      $pokemonSet.className = 'pokemon-set';
+      $pokemonSet.textContent = pokemon.response.data[i].set.name;
+      var $rarity = document.createElement('p');
+      $rarity.textContent = 'Rarity: ' + pokemon.response.data[i].rarity;
+      var $cardType = document.createElement('p');
+      $cardType.textContent = 'Card Type / Hp : ' + pokemon.response.data[i].types + ' / ' + pokemon.response.data[i].hp;
+      var $addToFavorite = document.createElement('div');
+      $addToFavorite.className = 'favorite-container';
+      var $price = document.createElement('p');
+      $price.className = 'price';
+      $price.textContent = '$' + pokemon.response.data[i].cardmarket.prices.averageSellPrice;
+      var $heart = document.createElement('i');
+      $heart.className = 'fa fa-heart';
 
-  $cardInfo.appendChild($pokemonName);
-  $cardInfo.appendChild($pokemonSet);
-  $cardInfo.appendChild($price);
-  $row.appendChild($cardInfo);
-
+      $cardInfo.appendChild($pokemonName);
+      $cardInfo.appendChild($pokemonSet);
+      $cardInfo.appendChild($rarity);
+      $cardInfo.appendChild($cardType);
+      $addToFavorite.appendChild($price);
+      $addToFavorite.appendChild($heart);
+      $cardInfo.appendChild($addToFavorite);
+      $row.appendChild($cardInfo);
+    }
+  }
 });
 
 pokemon.send();
+
+function search() {
+  if (event.key === 'Enter') {
+    $homePage.className = 'hidden';
+    $searchResults.className = '';
+  }
+}

@@ -146,6 +146,8 @@ img {
 
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .col-fourth {
@@ -155,4 +157,36 @@ ul {
 
 .card-info {
   padding-left: 8px;
+}
+
+.pokemon-name {
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.pokemon-set {
+  margin-top: 0;
+  font-size: 13px;
+}
+
+.price,
+.fa,
+.fa-heart {
+  margin-top: 110px;
+}
+
+.favorite-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa,
+.fa-heart {
+  color: red;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.row {
+  margin-bottom: 30px;
 }
