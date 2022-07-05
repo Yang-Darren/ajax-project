@@ -58,7 +58,7 @@ pokemon.addEventListener('load', function () {
       $cardInfo.appendChild($addToFavorite);
       $pokemonSearch.appendChild($cardInfo);
     }
-  }
+  } $search.value = '';
 });
 
 pokemon.send();
