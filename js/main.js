@@ -1,6 +1,7 @@
 var $search = document.querySelector('#search');
 var $homePage = document.querySelector('#home-page');
 var $searchResults = document.querySelector('#search-result');
+var $searchNav = document.querySelector('.search-nav');
 var $homeNav = document.querySelector('.home');
 var pokemon = new XMLHttpRequest();
 var $pokemonList = document.querySelector('ul');
@@ -9,12 +10,20 @@ $pokemonSearch.className = 'row';
 $pokemonList.appendChild($pokemonSearch);
 
 $search.addEventListener('keydown', search);
-$homeNav.addEventListener('click', navBar);
+$homeNav.addEventListener('click', homeNav);
+$searchNav.addEventListener('click', searchClickHome);
 
-function navBar() {
+function homeNav() {
   if (event.target.matches('.home')) {
     $homePage.className = '';
     $searchResults.className = 'hidden';
+  }
+}
+
+function searchClickHome() {
+  if (event.target.matches('.search-nav')) {
+    $homePage.className = 'hidden';
+    $searchResults.className = '';
   }
 }
 
