@@ -151,8 +151,9 @@ ul {
 }
 
 .col-fourth {
-  flex-basis: 25%;
   background-color: white;
+  margin-bottom: 30px;
+  border-radius: 30px;
 }
 
 .card-info {

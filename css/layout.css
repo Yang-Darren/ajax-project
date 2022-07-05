@@ -29,10 +29,6 @@
   #search-results {
     width: 300px;
   }
-
-  .col-fourth {
-    width: 100%;
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -50,5 +46,9 @@
 
   #search-results {
     width: 600px;
+  }
+
+  .col-fourth {
+    width: 25%;
   }
 }

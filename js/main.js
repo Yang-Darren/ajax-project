@@ -2,6 +2,11 @@ var $search = document.querySelector('#search');
 var $homePage = document.querySelector('#home-page');
 var $searchResults = document.querySelector('#search-result');
 var $homeNav = document.querySelector('.home');
+var pokemon = new XMLHttpRequest();
+var $pokemonList = document.querySelector('ul');
+var $pokemonSearch = document.createElement('li');
+$pokemonSearch.className = 'row';
+$pokemonList.appendChild($pokemonSearch);
 
 $search.addEventListener('keydown', search);
 $homeNav.addEventListener('click', navBar);
@@ -13,22 +18,14 @@ function navBar() {
   }
 }
 
-var pokemon = new XMLHttpRequest();
-var $pokemonList = document.querySelector('ul');
-
 pokemon.open('GET', 'https://api.pokemontcg.io/v2/cards');
 pokemon.responseType = 'json';
 pokemon.addEventListener('load', function () {
   for (var i = 0; i < 250; i++) {
     if ($search.value === pokemon.response.data[i].name) {
-      var $pokemonSearch = document.createElement('li');
-      $pokemonList.appendChild($pokemonSearch);
-      var $row = document.createElement('div');
-      $row.className = 'row';
-      $pokemonSearch.appendChild($row);
       var $imgColumn = document.createElement('div');
       $imgColumn.className = 'col-fourth';
-      $row.appendChild($imgColumn);
+      $pokemonSearch.appendChild($imgColumn);
       var $pokemonImg = document.createElement('img');
       $pokemonImg.setAttribute('src', pokemon.response.data[i].images.small);
       $imgColumn.appendChild($pokemonImg);
@@ -59,7 +56,7 @@ pokemon.addEventListener('load', function () {
       $addToFavorite.appendChild($price);
       $addToFavorite.appendChild($heart);
       $cardInfo.appendChild($addToFavorite);
-      $row.appendChild($cardInfo);
+      $pokemonSearch.appendChild($cardInfo);
     }
   }
 });
