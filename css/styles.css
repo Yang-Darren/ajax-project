@@ -42,10 +42,6 @@ h1 {
   margin-bottom: 60px;
 }
 
-.card-wrapper {
-  display: flex;
-}
-
 label {
   font-size: 30px;
   font-weight: bolder;
@@ -194,4 +190,10 @@ ul {
 
 .row {
   margin-bottom: 30px;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
 }

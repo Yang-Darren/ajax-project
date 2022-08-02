@@ -1,13 +1,10 @@
-var $search = document.querySelector('#search');
-var $homePage = document.querySelector('#home-page');
-var $searchResults = document.querySelector('#search-result');
-var $searchNav = document.querySelector('.search-nav');
-var $homeNav = document.querySelector('.home');
-var pokemon = new XMLHttpRequest();
-var $pokemonList = document.querySelector('ul');
-var $pokemonSearch = document.createElement('li');
-$pokemonSearch.className = 'row';
-$pokemonList.appendChild($pokemonSearch);
+const $search = document.querySelector('#search');
+const $homePage = document.querySelector('#home-page');
+const $searchResults = document.querySelector('#search-result');
+const $searchNav = document.querySelector('.search-nav');
+const $homeNav = document.querySelector('.home');
+const pokemon = new XMLHttpRequest();
+const $pokemonList = document.querySelector('ul');
 
 $search.addEventListener('keydown', search);
 $homeNav.addEventListener('click', homeNav);
@@ -27,19 +24,28 @@ function searchClickHome() {
   }
 }
 
+function search() {
+  if (event.key === 'Enter') {
+    $homePage.className = 'hidden';
+    $searchResults.className = '';
+  }
+}
+
 pokemon.open('GET', 'https://api.pokemontcg.io/v2/cards');
 pokemon.responseType = 'json';
 pokemon.addEventListener('load', function () {
   for (var i = 0; i < 250; i++) {
     if ($search.value === pokemon.response.data[i].name) {
+      var $pokemonSearch = document.createElement('li');
+      $pokemonSearch.className = 'col-fourth card';
+      $pokemonList.appendChild($pokemonSearch);
       var $imgColumn = document.createElement('div');
-      $imgColumn.className = 'col-fourth';
       $pokemonSearch.appendChild($imgColumn);
       var $pokemonImg = document.createElement('img');
       $pokemonImg.setAttribute('src', pokemon.response.data[i].images.small);
       $imgColumn.appendChild($pokemonImg);
       var $cardInfo = document.createElement('div');
-      $cardInfo.className = 'col-fourth card-info';
+      $cardInfo.className = 'card-info';
       var $pokemonName = document.createElement('p');
       $pokemonName.className = 'pokemon-name';
       $pokemonName.textContent = pokemon.response.data[i].name;
@@ -71,10 +77,3 @@ pokemon.addEventListener('load', function () {
 });
 
 pokemon.send();
-
-function search() {
-  if (event.key === 'Enter') {
-    $homePage.className = 'hidden';
-    $searchResults.className = '';
-  }
-}
