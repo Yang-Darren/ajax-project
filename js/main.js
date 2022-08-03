@@ -1,3 +1,4 @@
+
 const $search = document.querySelector('#search');
 const $homePage = document.querySelector('#home-page');
 const $searchResults = document.querySelector('#search-result');
@@ -28,6 +29,7 @@ function search() {
   if (event.key === 'Enter') {
     $homePage.className = 'hidden';
     $searchResults.className = '';
+    pokemon.send();
   }
 }
 
@@ -40,6 +42,7 @@ pokemon.addEventListener('load', function () {
       $pokemonSearch.className = 'col-fourth card';
       $pokemonList.appendChild($pokemonSearch);
       var $imgColumn = document.createElement('div');
+      $pokemonSearch.className = 'col-fourth card';
       $pokemonSearch.appendChild($imgColumn);
       var $pokemonImg = document.createElement('img');
       $pokemonImg.setAttribute('src', pokemon.response.data[i].images.small);
@@ -75,5 +78,3 @@ pokemon.addEventListener('load', function () {
     }
   } $search.value = '';
 });
-
-pokemon.send();

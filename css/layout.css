@@ -33,7 +33,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 900px;
+    max-width: 960px;
   }
 
   .col {
@@ -49,6 +49,6 @@
   }
 
   .col-fourth {
-    width: 25%;
+    width: 50%;
   }
 }
