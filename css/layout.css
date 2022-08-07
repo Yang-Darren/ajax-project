@@ -30,8 +30,8 @@
     width: 300px;
   }
 
-  #search-results {
-    width: 300px;
+  #search-again {
+    width: 400px;
   }
 }
 
@@ -48,7 +48,7 @@
     width: 500px;
   }
 
-  #search-results {
+  #search-again {
     width: 600px;
   }
 

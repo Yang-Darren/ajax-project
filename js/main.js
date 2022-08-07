@@ -1,5 +1,6 @@
 
 const $search = document.querySelector('#search');
+const $searchAgain = document.querySelector('#search-again');
 const $homePage = document.querySelector('#home-page');
 const $searchResults = document.querySelector('#search-result');
 const $searchNav = document.querySelector('.search-nav');
@@ -39,7 +40,7 @@ function search() {
 
 function appendSearch() {
   for (var i = 0; i < 250; i++) {
-    if ($search.value === pokemon.response.data[i].name) {
+    if ($search.value === pokemon.response.data[i].name || $searchAgain.value === pokemon.response.data[i].name) {
       var $pokemonSearch = document.createElement('li');
       $pokemonSearch.className = 'col-fourth card';
       $pokemonList.appendChild($pokemonSearch);
@@ -79,6 +80,7 @@ function appendSearch() {
       $pokemonSearch.appendChild($cardInfo);
     }
   } $search.value = '';
+  $searchAgain.value = '';
 }
 
 pokemon.send();
