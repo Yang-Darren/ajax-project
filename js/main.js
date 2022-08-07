@@ -10,6 +10,9 @@ const $pokemonList = document.querySelector('ul');
 $search.addEventListener('keydown', search);
 $homeNav.addEventListener('click', homeNav);
 $searchNav.addEventListener('click', searchClickHome);
+pokemon.open('GET', 'https://api.pokemontcg.io/v2/cards');
+pokemon.responseType = 'json';
+pokemon.addEventListener('load', appendSearch);
 
 function homeNav() {
   if (event.target.matches('.home')) {
@@ -29,13 +32,12 @@ function search() {
   if (event.key === 'Enter') {
     $homePage.className = 'hidden';
     $searchResults.className = '';
-    pokemon.send();
+    $pokemonList.textContent = '';
+    appendSearch();
   }
 }
 
-pokemon.open('GET', 'https://api.pokemontcg.io/v2/cards');
-pokemon.responseType = 'json';
-pokemon.addEventListener('load', function () {
+function appendSearch() {
   for (var i = 0; i < 250; i++) {
     if ($search.value === pokemon.response.data[i].name) {
       var $pokemonSearch = document.createElement('li');
@@ -77,4 +79,6 @@ pokemon.addEventListener('load', function () {
       $pokemonSearch.appendChild($cardInfo);
     }
   } $search.value = '';
-});
+}
+
+pokemon.send();
