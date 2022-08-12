@@ -22,21 +22,37 @@
     width: 50%;
   }
 
-  input {
+  .col-fourth {
+    width: 100%;
+  }
+
+  #search {
     width: 300px;
+  }
+
+  #search-again {
+    width: 400px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 900px;
+    max-width: 1000px;
   }
 
   .col {
     width: calc(100%/3);
   }
 
-  input {
+  #search {
     width: 500px;
+  }
+
+  #search-again {
+    width: 600px;
+  }
+
+  .col-fourth {
+    width: 50%;
   }
 }
