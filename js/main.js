@@ -43,6 +43,7 @@ function appendSearch() {
     if ($search.value === pokemon.response.data[i].name || $searchAgain.value === pokemon.response.data[i].name) {
       var $pokemonSearch = document.createElement('li');
       $pokemonSearch.className = 'col-fourth card';
+      $pokemonSearch.setAttribute('card-number', i);
       $pokemonList.appendChild($pokemonSearch);
       var $imgColumn = document.createElement('div');
       $pokemonSearch.className = 'col-fourth card';
