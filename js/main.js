@@ -3,14 +3,17 @@ const $search = document.querySelector('#search');
 const $searchAgain = document.querySelector('#search-again');
 const $homePage = document.querySelector('#home-page');
 const $searchResults = document.querySelector('#search-result');
+const $collectionValue = document.querySelector('#collection-section');
 const $searchNav = document.querySelector('.search-nav');
 const $homeNav = document.querySelector('.home');
+const $collectionNav = document.querySelector('.my-collection');
 const pokemon = new XMLHttpRequest();
 const $pokemonList = document.querySelector('ul');
 
 $search.addEventListener('keydown', search);
 $homeNav.addEventListener('click', homeNav);
 $searchNav.addEventListener('click', searchClickHome);
+$collectionNav.addEventListener('click', clickCollection);
 pokemon.open('GET', 'https://api.pokemontcg.io/v2/cards');
 pokemon.responseType = 'json';
 pokemon.addEventListener('load', appendSearch);
@@ -19,13 +22,23 @@ function homeNav() {
   if (event.target.matches('.home')) {
     $homePage.className = '';
     $searchResults.className = 'hidden';
+    $collectionValue.className = 'hidden';
   }
 }
 
 function searchClickHome() {
   if (event.target.matches('.search-nav')) {
     $homePage.className = 'hidden';
+    $collectionValue.className = 'hidden';
     $searchResults.className = '';
+  }
+}
+
+function clickCollection() {
+  if (event.target.matches('.my-collection')) {
+    $homePage.className = 'hidden';
+    $collectionValue.className = '';
+    $searchResults.className = 'hidden';
   }
 }
 
