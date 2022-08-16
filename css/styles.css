@@ -197,3 +197,27 @@ ul {
   flex-wrap: wrap;
   max-width: 100%;
 }
+
+.space-evenly {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collection {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.remove-card {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.collect,
+.value {
+  margin: 0;
+}
+
+.value {
+  padding-left: 20px;
+}
