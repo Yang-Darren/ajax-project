@@ -157,7 +157,7 @@ ul {
 
 .card-info {
   padding-left: 8px;
-  width: 30%;
+  width: 35%;
 }
 
 .pokemon-name {
@@ -198,7 +198,7 @@ ul {
   max-width: 100%;
 }
 
-.space-evenly {
+.space-between {
   display: flex;
   justify-content: space-between;
 }
@@ -220,4 +220,18 @@ ul {
 
 .value {
   padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.space-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.fav-img {
+  width: 95%;
+}
+
+.favorite-images {
+  padding-bottom: 15px;
 }
