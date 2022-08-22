@@ -103,7 +103,6 @@ function clickHeart(event) {
   if (event.target && event.target.tagName === 'I') {
     var $closestEntry = event.target.closest('.col-fourth');
   }
-
   var favoriteCardId = $closestEntry.getAttribute('card-number');
   var $favoriteLi = document.createElement('li');
   $favoriteLi.className = 'favorite-images';

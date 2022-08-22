@@ -1,7 +1,9 @@
 /* exported data */
+
 var cardData = {
   collection: [],
-  editing: null
+  editing: null,
+  collectionId: 1
 };
 
 var collectionValue = localStorage.getItem('collection-value');
